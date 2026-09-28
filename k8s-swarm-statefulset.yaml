@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: agent-swarm-nodes
+  namespace: swarm-mesh
+spec:
+  serviceName: swarm-internal
+  replicas: 5
+  selector:
+    matchLabels:
+      app: raft-agent
+  template:
+    metadata:
+      labels:
+        app: raft-agent
+    spec:
+      containers:
+        - name: agent-node
+          image: python:3.11-slim
+          command: ["python", "raft_node_agent.py"]
+          resources:
+            limits:
+              cpu: "1"
+              memory: 2Gi

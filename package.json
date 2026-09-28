@@ -1,0 +1,12 @@
+{
+  "name": "tp-agent-swarm-consensus",
+  "version": "1.0.0",
+  "description": "Byzantine-resilient Multi-Agent Swarm with distributed RAFT consensus governance, leader election, and cryptographic audit logging",
+  "main": "quorum_client.ts",
+  "scripts": {
+    "test": "bash scripts/validate.sh"
+  },
+  "keywords": ["multi-agent", "swarm", "raft", "consensus", "byzantine", "sre"],
+  "author": "Talari Pradeep <talaripradeep14@gmail.com>",
+  "license": "MIT"
+}
